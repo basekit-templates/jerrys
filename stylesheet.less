@@ -1,0 +1,483 @@
+/* 
+
+Table of Contents -
+
+  1. Default
+  2. Media Queries
+  3. Grid
+  4. Header
+  5. Menu Navigation
+  6. Menu
+  7. Footer
+
+*/
+
+
+/* ===============================
+   1. Default
+   =============================== */
+
+@import "@{templateCommon}/basekit-bootstrap.less";
+
+body {
+    background-color: @color-swatch1;
+    border: 25px solid @color-swatch3;
+    @media @mobile {
+        border: 15px solid @color-swatch3;
+    }
+    .wrapper { 
+        margin: 0; 
+        width: 100%;
+    }
+}
+
+
+/* ===============================
+   2. Media Queries
+   =============================== */
+
+@desktop: ~"only screen and (max-width: 1024px)";
+@tablet: ~"only screen and (max-width: 840px)";
+@mobile: ~"only screen and (max-width: 640px)";
+
+
+/* ===============================
+   3. Grid
+   =============================== */
+
+*, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.row { 
+    max-width: 1400px; 
+    margin: 2% auto;
+    @media @tablet {
+        padding: 4%;
+        max-width: none;
+        width: 100%;
+    }
+    .row {
+        width: auto; 
+        max-width: none; 
+        min-width: 0; 
+        margin: 0 -15px; 
+    }
+ }
+
+.column, .columns { 
+    float: left; 
+    min-height: 1px; 
+    position: relative; 
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+[class*="column"] + [class*="column"]:last-child { float: right; }
+[class*="column"] + [class*="column"].end { float: left; }
+
+.three, .row .three { 
+    width: 30%; 
+    @media @tablet {
+        width: 100%;
+    }
+}
+.nine, .row .nine { 
+    width: 70%; 
+    @media @tablet {
+        width: 100%;
+    }
+}
+
+.row { 
+    *zoom: 1; 
+    &:before {
+        content: " "; 
+        display: table; 
+    }
+    &:after {
+        content: " "; 
+        display: table;
+        clear: both;
+    }
+}
+
+
+/* ===============================
+   4. Header
+   =============================== */
+
+header {
+    padding: 1.5em 0;
+    @media @tablet {
+        padding-bottom: 0;
+    }
+    .widget{ 
+        &.logo {
+            float: none;
+            img {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        &.companyname {
+            a {
+                &:hover {
+                }
+            }
+            h1 {
+                font-family: @font-swatch10-font-family;
+                font-weight: @font-swatch10-font-weight;
+                color: @font-swatch10-color;
+                line-height: @font-swatch10-line-height;
+                letter-spacing: @font-swatch10-letter-spacing;
+                font-size: @font-swatch10-font-size;
+                text-align: center;
+                padding: 5px 0 0;
+            }
+            h6 {
+                font-size: @font-swatch9-font-family;
+                font-weight: @font-swatch9-font-weight;
+                color: fade(@font-swatch9-color, 65%);
+                line-height: @font-swatch9-line-height;
+                letter-spacing: @font-swatch9-letter-spacing;
+                font-size: @font-swatch9-font-size;
+                text-align: center;
+                margin: 0;
+            }
+        }  /* end companyname */
+    } /* end widget */
+    .image-img {
+        display: block;
+        margin: 2.5em auto;
+        @media @tablet {
+            margin-bottom: 0;
+            width: 65%;
+        }
+        @media @mobile {
+            width: 100%;
+        }
+    }
+}  /* end header */
+
+
+/* ===============================
+   5. Menu Navigation
+   =============================== */
+
+nav {
+    .widget {
+        &.menusections {
+            min-height: 30px;
+            margin: 1em 0 0;
+            @media @tablet {
+                margin-top: 2em;
+                text-align: center;
+            }
+            ul {
+                display: inline-block;
+                padding: 7em 0 0.25em;
+                margin: 0;
+                @media @tablet {
+                    /* Hidden until nav icon is clicked */
+                    display: none;
+                    /* Then these styles are applied */
+                    width: 100%;
+                    border-top: 2px solid fade(@color-swatch5, 20%);
+                    border-bottom: 2px solid fade(@color-swatch5, 20%);
+                    padding: 0.25em 0;
+                    margin: 3em auto 1.5em;
+                }
+                li {
+                    display: block;
+                    float: left;
+                    list-style: none;
+                    margin: 0 1em;
+                    &:first-child {
+                        margin-left: 0;
+                        @media @tablet {
+                            margin: 0;
+                        }
+                    }
+                    a {
+                        font-family:@font-swatch6-font-family;
+                        font-size:@font-swatch6-font-size;
+                        font-weight: @font-swatch6-font-weight;
+                        color: @font-swatch6-color;
+                        line-height:@font-swatch6-line-height;
+                        letter-spacing: @font-swatch6-letter-spacing;
+                    }
+                    @media @tablet {
+                        border-bottom: 1px solid fade(@color-swatch5, 20%);
+                        margin: 0;
+                        width: 100%;
+                        padding: 1em 0;
+                    }
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+                }
+            }
+            a {
+                &.menu-pull {
+                    display: none;
+                    position: relative;
+                    @media @tablet {
+                        display: block;
+                        width: 100%;
+                        position: absolute;
+                        top: 0;
+                        background-color: none;
+                        height: 60px;
+                        &:after {
+                            content:"MENU";
+                            color: @font-swatch5-color;
+                            font-size: @font-swatch6-font-size;
+                            font-weight: @font-swatch3-font-weight;
+                            text-decoration: underline;
+                            width: 50px;
+                            height: 50px;
+                            top: 8px;
+                            left: 50%;
+                            margin-left: -25px;
+                            display: inline-block;
+                            position: absolute;
+                            border: none;
+                        }
+                    }
+                }
+            }
+        }  /* end menu sections */
+    }
+}  /* end nav */
+
+
+/* ===============================
+   6. Menu
+   =============================== */
+
+div[role="main"] {
+    .widget {
+        &.menu {
+            .main {
+                padding: 1em 0;
+                ol {  /* Menu sections */
+                    margin: 0;
+                }
+                .menu-header, .menu-subsection-header {  /* Menu section headers */
+                    margin: 0.5em 0 1em;
+                    h1 {  /* Menu section header */
+                        font-family: @font-swatch1-font-family;
+                        font-size:@font-swatch1-font-size;
+                        font-weight: @font-swatch1-font-weight;
+                        color: @font-swatch1-color;
+                        line-height:@font-swatch1-line-height;
+                        letter-spacing: @font-swatch1-letter-spacing;
+                        text-align: right;
+                        overflow: hidden;
+                        &:before {
+                            border-top: 2px solid @color-swatch4;
+                            content: "";
+                            display: inline-block;
+                            margin-bottom: .15em;
+                            padding: 0 5%;
+                            width: 100%;
+                            vertical-align: middle;
+                            position: relative;
+                            right: 2em;
+                            margin-left: -50%; 
+                            @media @tablet {
+                                border: none;
+                                display: block;
+                                padding: 0;
+                                margin: 0;
+                            }
+                        }
+                        @media @tablet {
+                            text-align: center
+                        }
+                    }
+                    h2 {  /* Menu subsection header */
+                        text-align: center;
+                    }
+                    p {  /* Menu header description */  
+                        text-align: right;
+                        @media @tablet {
+                            text-align: center
+                        } 
+                    }  
+                }
+                .menu-items {  /* Menu items container */ 
+                    column-count: 2;
+                    column-gap: 50px;
+                    -moz-column-count: 2;
+                    -moz-column-gap: 50px; 
+                    -webkit-column-count: 2;
+                    -webkit-column-gap: 50px;
+                    padding-left: 0;
+                    @media @mobile {
+                        column-count: 1;
+                        column-gap: 30px;
+                        -moz-column-count: 1;
+                        -moz-column-gap: 30px; 
+                        -webkit-column-count: 1;
+                        -webkit-column-gap: 30px;
+                    }
+                    li {  /* Menu items */
+                        display: inline-block;
+                        padding: 1em 0;
+                        &.menu-item-promoted { /* Promoted menu item */
+                            .inner-item { /* Item content container */
+                                h3 {
+                                }
+                            }
+                        }  /* end menu-item-promoted */
+                        &.menu-subsection-promoted {  /* Promoted subsection item container */
+                            .inner-item {  /* Promoted subsection item */
+                                h2 {
+                                }
+                            }
+                        }  /* end menu-subsection-promoted */
+                        .inner-item {  /* Item content container */
+                            h3 {  /* Item header */  
+                            }
+                            img {  /* Item image */
+                            }
+                            .menu-item-price {  /* Item price */
+                                p {
+                                    font-size: @font-swatch3-font-size;
+                                    font-weight: @font-swatch3-font-weight;
+                                }
+                            }
+                            p {  /* Item description */
+                            }
+                            h4 {  /* Nutritional heading */
+                            }
+                            .menu-item-nutritional-prop, .menu-item-nutritional-title {  /* Nutritional description */
+                                font-size: bkscale(@font-swatch5-font-size, 0.92);
+                                font-style: italic;
+                            }
+                            .menu-item-nutritional-title {
+                                padding-bottom: 0;
+                            }
+                            .menu-section-item-dietary-props {  /* Nutritional icons */
+                                .dietary-icon {  /* Default icon */
+                                    background-color: @color-swatch3;
+                                    border-radius: 0;
+                                    color: @color-swatch1;
+                                    margin: 1em 0.25em 1em 0;
+                                    &:before {
+                                        font-size: bkscale(@font-swatch5-font-size, 0.9);
+                                    }  
+                                }
+                                .vegetarian-icon {
+                                    &:after {
+                                    }              
+                                }
+                                .vegan-icon {
+                                    &:after {
+                                    }              
+                                }
+                                .nutFree-icon {
+                                    &:after {
+                                    } 
+                                }
+                                .glutenFree-icon {
+                                    &:after {
+                                    } 
+                                }
+                                .dairyFree-icon {
+                                    &:after {
+                                    } 
+                                }
+                            }  /* end nutritional icons */
+                        }  /* end item content container */
+                    }  /* end menu items */
+                }  /* end menu items container */  
+                .menu-subsection {
+                    border: 1px solid fade(@color-swatch5, 25%);
+                    padding: 5%;
+                    margin: 3em 0;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    li {
+                        list-style: none;
+                    }
+                    .menu-subsection-description {
+                        text-align: center;
+                    }
+                }
+                .menu-info {
+                    p {  /* Menu note */
+                    }
+                    dl {  /* Nutritional key */
+                        dt, dd {
+                        }
+                        dt {  /* Nutritional icon */
+                        }
+                        dd {    /* Nutritional text */
+                        }   
+                    }/* end dl */
+                }  /* end menu-info */
+            }/* end main */
+        }  /* end menu */
+    }  /* end widget */
+}  /* end main */
+
+
+/* ===============================
+   7. Footer
+   =============================== */
+
+footer {
+    background: none;
+    border-top: 3px solid @color-swatch5;
+    float: left;
+    margin-left: 3%;
+    margin-right: 3%;
+    width: 94%;
+    h1 {
+        border-bottom: 1px solid @color-swatch3;
+        padding-bottom: 6px;
+        margin-bottom: 1.25em;
+    }
+    .columns {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .nine {
+        text-align: right;
+        @media @mobile {
+            text-align: center;
+        }
+    }
+    .companyaddress {
+        p {
+            padding-bottom: 4px;
+        }
+    }
+    .widget {
+        &.clicktocall {
+            padding: 0;
+            @media @mobile {
+                background-color: @color-swatch3;
+                text-align: center;
+                margin: 1em auto 1.5em;
+            }
+            a {
+                @media @mobile {
+                    color: @color-swatch1;
+                    padding-right: 15px;
+                    padding-top: 12px;
+                padding-bottom: 12px;
+                }
+                &:hover {
+                    background-color: darken(@color-swatch3, 5%);
+                    color: @color-swatch1;
+                    padding-right: 15px;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                }
+            }
+        }
+    }
+}

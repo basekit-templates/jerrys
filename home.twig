@@ -1,0 +1,30 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="row page">
+    <header class="three columns">
+        {{widget('logo', 'jerrys-logo', {"defaultlogo": asset('images/jerrys-logo.png')})|raw}}
+        {{widget('companyname', 'jerrys-diner', {"business": "<h1>JERRY'S</h1><h6>LOCAL &amp; FRIENDLY</h6>"})|raw}}
+        {{widget('image', 'jerrys-image', { 'src': asset('/images/jerrys-img.jpg'), 'alt': 'my image', 'fileName': 'jerrys-img.jpg', 'fileSize': 'kb', 'imageSize': '', 'imageWidth': '100%'})|raw}}
+    </header>
+
+    <div role ="main" class="nine columns">
+        <nav>
+            {{widget('menusections', 'menusections1', {})|raw}}
+        </nav>
+        {{widget('menu', 'menu1', {})|raw}}
+    </div>
+</div>
+<div class="row">
+    <footer>
+        <div class="three columns">
+            {{widget('clicktocall', 'footer-phone', {phoneText: '0800 123 123'})|raw}}
+        </div>
+        <div class="nine columns">
+            {{widget('companyaddress', 'footer-address', {})|raw}}
+        </div>
+    </footer>
+</div>
+
+{% endblock %}
