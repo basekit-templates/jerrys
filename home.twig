@@ -5,7 +5,8 @@
 <div class="row page">
     <header class="three columns">
         {{widget('logo', 'jerrys-logo', {"defaultlogo": asset('images/jerrys-logo.png')})|raw}}
-        {{widget('companyname', 'jerrys-diner', {"business": "<h1>JERRY'S</h1><h6>LOCAL &amp; FRIENDLY</h6>"})|raw}}
+        {{widget('companyname', 'jerrys-diner', {"business": "JERRY'S"})|raw}}
+        {{widget('content', 'strapline', {content: '<h6>LOCAL & FRIENDLY</h6>', lines: 'all'})|raw}}
         {{widget('image', 'jerrys-image', { 'src': asset('/images/jerrys-img.jpg'), 'alt': 'my image', 'fileName': 'jerrys-img.jpg', 'fileSize': 'kb', 'imageSize': '', 'imageWidth': '100%'})|raw}}
     </header>
 
