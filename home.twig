@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="row page">
-    <header class="three columns">
+    <header class="bk-header three columns">
         {{widget('logo', 'jerrys-logo', {"defaultlogo": asset('images/jerrys-logo.png')})|raw}}
         {{widget('companyname', 'jerrys-diner', {"business": "JERRY'S"})|raw}}
         {{widget('content', 'strapline', {content: '<h6>LOCAL & FRIENDLY</h6>', lines: 'all'})|raw}}
@@ -18,7 +18,7 @@
     </div>
 </div>
 <div class="row">
-    <footer>
+    <footer class="bk-footer">
         <div class="three columns">
             {{widget('clicktocall', 'footer-phone', {phoneText: '0800 123 123'})|raw}}
         </div>

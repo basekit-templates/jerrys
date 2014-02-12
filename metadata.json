@@ -1,7 +1,7 @@
 {
     "name":"Jerrys",
-    "thumbnail":"sycamore.png",
-    "screenshot":"sycamore.png",
+    "thumbnail":"jerrys.png",
+    "screenshot":"jerrys.png",
     "tags": {
     "en": ["minimal", "clean", "photography", "vintage", "modern", "dark", "studio", "website", "creative", "elegant", "professional", "unique", "media", "sans-serif"],
     "es": ["minimalista", "limpio", "fotografico", "vintage", "moderno", "oscuro", "estudio", "website", "creativo", "elegante", "profesional", "unico", "comunicacion", "sans-serif"],
@@ -113,10 +113,10 @@
             "font-size": "16px",
             "font-weight": "400",
             "line-height": "28px",
-            "color": "@color-swatch5",
+            "color": "@color-swatch7",
             "letter-spacing": "inherit",
-            "background-color": "transparent",
-            "background-color-hover": "darken(@color-swatch1,5%)"
+            "background-color": "@color-swatch3",
+            "background-color-hover": "darken(@color-swatch3,5%)"
         },
         "font8": {
             "font-family": "\"Ubuntu\", Candara, Futura, sans-serif",
