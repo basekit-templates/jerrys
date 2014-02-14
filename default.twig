@@ -3,23 +3,23 @@
 {% block content %}
 
 <div class="row page">
-    <header class="bk-header three columns">
+    <header class="bk-header three cols">
         {{widget('logo', 'jerrys-logo', {"defaultlogo": asset('images/jerrys-logo.png')})|raw}}
         {{widget('companyname', 'jerrys-diner', {"business": "JERRY'S"})|raw}}
         {{widget('content', 'strapline', {content: '<h6>LOCAL & FRIENDLY</h6>', lines: 'all'})|raw}}
         {{widget('image', 'jerrys-image', { 'src': asset('/images/jerrys-img.jpg'), 'alt': 'my image', 'fileName': 'jerrys-img.jpg', 'fileSize': 'kb', 'imageSize': '', 'imageWidth': '100%'})|raw}}
         {{widget('extendednavigation', 'navigationheader', {})|raw}}
     </header>
-    <div role ="main" class="nine columns">
+    <div role ="main" class="nine cols">
         {{zone('main')|raw}}
     </div>
 </div>
 <div class="row">
     <footer class="bk-footer">
-        <div class="three columns">
+        <div class="three cols">
             {{widget('clicktocall', 'footer-phone', {phoneText: '0800 123 123'})|raw}}
         </div>
-        <div class="nine columns">
+        <div class="nine cols">
             {{widget('companyaddress', 'footer-address', {})|raw}}
         </div>
     </footer>

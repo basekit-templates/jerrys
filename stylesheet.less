@@ -71,7 +71,7 @@ body {
     }
  }
 
-.column, .columns { 
+.col, .cols { 
     float: left; 
     min-height: 1px; 
     position: relative; 
@@ -79,8 +79,8 @@ body {
     padding-right: 3%;
 }
 
-[class*="column"] + [class*="column"]:last-child { float: right; }
-[class*="column"] + [class*="column"].end { float: left; }
+[class*="col"] + [class*="col"]:last-child { float: right; }
+[class*="col"] + [class*="col"].end { float: left; }
 
 .three, .row .three { 
     width: 30%; 
@@ -199,7 +199,7 @@ body {
             li {
                 float: left;
                 display: block;
-                padding: 5px 0;
+                padding: 10px 0;
                 text-align: center;
                 width: 100%;
                 @media @tablet {
@@ -209,7 +209,9 @@ body {
                 }
 
                 &:first-child {
-                    border-top: 1px solid fade(@color-swatch4, 20%);
+                    @media @tablet {
+                        border-top: 1px solid fade(@color-swatch4, 20%);
+                    }
                     a {
                         @media @tablet {
                             padding-left: 15px;
@@ -247,6 +249,7 @@ body {
                     color: @font-swatch6-color;
                     line-height: @font-swatch6-line-height;
                     letter-spacing: @font-swatch6-letter-spacing;
+                    text-align: center;
                     &:hover {
                         color: @font-swatch6-color-hover;
                         text-decoration: underline;
@@ -272,6 +275,7 @@ body {
                         line-height: @font-swatch6-line-height;
                         letter-spacing: @font-swatch6-letter-spacing;
                         position: relative;
+                        text-align: center;
                         &:after {
                             content: "\25BC";
                             font-size: 8px;
@@ -299,6 +303,8 @@ body {
                     }
                     ul {
                         padding: 0;
+                        margin: 0 auto;
+                        width: 100%;
                         @media @tablet {
                             margin-top: 14px;
                         }
@@ -367,13 +373,15 @@ body {
         background: none;
         border-top: 1px dotted fade(@color-swatch6, 35%);
         border-bottom: 1px dotted fade(@color-swatch6, 35%);
-        min-height: 1px;
-        padding: 1em;
+        padding: 1em 0;
         @media @tablet {
+            display: table;
             border: none;
             padding: 0;
+            width: 100%;
         }
         ul {
+            margin: 0;
             @media @tablet {
                 display: block;
                 border-top: none;
@@ -383,22 +391,13 @@ body {
                 padding: 0;
                 margin: 0;
                 text-align: left;
+                width: auto;
                 @media @tablet {
                     background: none;
                     border-bottom: 1px solid fade(@color-swatch6, 30%);
                     border-right: none;
                     text-align: center;
-                }
-                &:first-child {
-                    @media @tablet {
-                        border-top: none;
-                    }
-                    @media @tablet {
-                        a {
-                            border-top: 1px solid fade(@color-swatch6, 30%);
-                            padding-left: 0;
-                        }
-                    }
+                    width: 100%;
                 }
                 &:last-child {
                     border-right: none;
@@ -409,8 +408,19 @@ body {
                 }
 
                 a {
+                    text-align: left;
+                    padding: 0 15px;
                     @media @tablet {
                         padding: 1em 0;
+                    }
+                }
+                &:first-child {
+                    @media @tablet {
+                        border-top: none;
+                    }
+                    a {
+                        border-top: 1px solid fade(@color-swatch6, 30%);
+                        padding-left: 0;
                     }
                 }
             }
@@ -579,7 +589,7 @@ div[role="main"] {
                             }
                             .menu-section-item-dietary-props {  /* Nutritional icons */
                                 .dietary-icon {  /* Default icon */
-                                    background-color: @color-swatch3;
+                                    background-color: fade(@color-swatch3, 85%);
                                     border-radius: 0;
                                     color: @color-swatch1;
                                     font-size: bkscale(@font-swatch5-font-size, 0.92);
