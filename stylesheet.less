@@ -373,7 +373,8 @@ body {
         background: none;
         border-top: 1px dotted fade(@color-swatch6, 35%);
         border-bottom: 1px dotted fade(@color-swatch6, 35%);
-        padding: 1em 0;
+        padding: 0.5em 0;
+        margin: 0;
         @media @tablet {
             display: table;
             border: none;
@@ -396,7 +397,6 @@ body {
                     background: none;
                     border-bottom: 1px solid fade(@color-swatch6, 30%);
                     border-right: none;
-                    text-align: center;
                     width: 100%;
                 }
                 &:last-child {
@@ -412,6 +412,7 @@ body {
                     padding: 0 15px;
                     @media @tablet {
                         padding: 1em 0;
+                        text-align: center;
                     }
                 }
                 &:first-child {
@@ -441,7 +442,7 @@ body {
    =============================== */
 
 div[role="main"] {
-    padding-top: 12em;
+    padding-top: 12.5em;
     @media @tablet {
         padding-top: 1.5em;
     }
@@ -542,6 +543,7 @@ div[role="main"] {
                     li {  /* Menu items */
                         display: inline-block;
                         padding: 1em 0;
+                        width: 100%;
                         &.menu-item-promoted { /* Promoted menu item */
                             .inner-item { /* Item content container */
                                 h3 {
