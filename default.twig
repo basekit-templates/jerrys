@@ -5,10 +5,12 @@
 <div class="row page">
     <header class="bk-header three cols">
         {{widget('logo', 'jerrys-logo', {"defaultlogo": asset('images/jerrys-logo.png')})|raw}}
-        {{widget('companyname', 'jerrys-diner', {"business": "JERRY'S"})|raw}}
+        {{widget('companyname', 'jerrys-diner', {"business": "profile"})|raw}}
         {{widget('content', 'strapline', {content: '<h6>LOCAL & FRIENDLY</h6>', lines: 'all'})|raw}}
         {{widget('image', 'jerrys-image', { 'src': asset('/images/jerrys-img.jpg'), 'alt': 'my image', 'fileName': 'jerrys-img.jpg', 'fileSize': 'kb', 'imageSize': '', 'imageWidth': '100%'})|raw}}
-        {{widget('extendednavigation', 'navigationheader', {})|raw}}
+        {% if pages|length > 1 %}
+            {{widget('extendednavigation', 'navigationheader', {})|raw}}
+        {% endif %}
     </header>
     <div role ="main" class="nine cols">
         {{zone('main')|raw}}
