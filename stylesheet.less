@@ -175,8 +175,8 @@ body {
         background-color: none;
         @media @tablet {
             background-color: none;
-            border-top: 2px solid fade(@color-swatch4, 15%);
-            border-bottom: 2px solid fade(@color-swatch4, 15%);
+            border-top: 2px solid fade(@color-swatch4, 20%);
+            border-bottom: 2px solid fade(@color-swatch4, 20%);
             margin: 2em 0 1.5em;
         }
         li {
@@ -210,6 +210,9 @@ body {
                 }
 
                 &:first-child {
+                    @media @tablet {
+                        border-top: 1px solid fade(@color-swatch4, 20%);
+                    }
                     a {
                         @media @tablet {
                             padding-left: 15px;
@@ -269,7 +272,7 @@ body {
                         font-family: @font-swatch6-font-family;
                         font-size: @font-swatch6-font-size;
                         font-weight: @font-swatch6-font-weight;
-                        color: @font-swatch6-color !important;
+                        color: @font-swatch6-color;
                         line-height: @font-swatch6-line-height;
                         letter-spacing: @font-swatch6-letter-spacing;
                         position: relative;
@@ -304,9 +307,14 @@ body {
                         margin: 0 auto;
                         width: 100%;
                         @media @tablet {
+                            background: @color-swatch4;
                             margin-top: 14px;
                         }
                         li {
+                            border-bottom: 1px solid fade(@color-swatch4, 20%);
+                            @media @tablet {
+                                border-bottom: 1px solid fade(@color-swatch7, 30%);
+                            }
                             &:first-child a {
                                 padding-left: 15px;
                             }
@@ -315,12 +323,18 @@ body {
                                     text-decoration: none;
                                 }
                                 .text {
+                                    @media @tablet {
+                                        color: @color-swatch7;
+                                    }
                                     padding: 0;
                                     &:after {
                                         content: "";
                                     }
                                     &:hover {
                                         text-decoration: none;
+                                        @media @tablet {
+                                            color: @color-swatch7;
+                                        }
                                     }
                                 }
                             }
@@ -374,8 +388,9 @@ body {
         padding: 0.5em 0;
         margin: 0;
         @media @tablet {
+            border-top: 2px solid fade(@color-swatch4, 20%);
+            border-bottom: 2px solid fade(@color-swatch4, 20%);
             display: table;
-            border: none;
             padding: 0;
             width: 100%;
         }
@@ -393,7 +408,7 @@ body {
                 width: auto;
                 @media @tablet {
                     background: none;
-                    border-bottom: 1px solid fade(@color-swatch6, 40%);
+                    border-bottom: 1px solid fade(@color-swatch4, 20%);
                     border-right: none;
                     width: 100%;
                 }
@@ -401,7 +416,6 @@ body {
                     border-right: none;
                     @media @tablet {
                         border-bottom: 1px solid fade(@color-swatch6, 40%);
-                        margin-bottom: 2.5em;
                     }
                 }
 
@@ -414,11 +428,8 @@ body {
                     }
                 }
                 &:first-child {
-                    @media @tablet {
-                        border-top: none;
-                    }
+                    border-top: none;
                     a {
-                        border-top: 1px solid fade(@color-swatch6, 30%);
                         padding-left: 0;
                     }
                 }
@@ -501,42 +512,8 @@ div[role="main"] {
                     }  
                 }
                 .menu-items {  /* Menu items container */ 
-                    column-count: 2;
-                    column-gap: 50px;
-                    -moz-column-count: 2;
-                    -moz-column-gap: 50px; 
-                    -webkit-column-count: 2;
-                    -webkit-column-gap: 50px;
                     padding-left: 0;
                     @media @mobile {
-                        column-count: 1;
-                        column-gap: 30px;
-                        -moz-column-count: 1;
-                        -moz-column-gap: 30px; 
-                        -webkit-column-count: 1;
-                        -webkit-column-gap: 30px;
-                    }
-                    > * {
-                        break-inside: avoid;
-                        -webkit-column-break-inside: avoid;
-                        -moz-column-break-inside: avoid;
-                        -ms-column-break-inside: avoid;
-                        -o-column-break-inside: avoid;
-                    }
-                    &.odd {
-                        -webkit-column-count: 3;
-                        -moz-column-count: 3;
-                        column-count: 3;
-                        @media @desktop {
-                            -webkit-column-count: 1;
-                            -moz-column-count: 1;
-                            column-count: 1;  
-                        }
-                     }
-                     &.1-columns {
-                        -webkit-column-count: 1;
-                        -moz-column-count: 1;
-                        column-count: 1;
                     }
                     li {  /* Menu items */
                         display: inline-block;
@@ -661,7 +638,7 @@ div[role="main"] {
         padding-bottom: 6px;
         margin-bottom: 1.25em;
     }
-    .columns {
+    .cols, .col {
         padding-left: 0;
         padding-right: 0;
     }
@@ -898,11 +875,24 @@ fieldset {
 }
 
 /* ===============================
+   BLOCK QUOTE
+  =============================== */
+
+  blockquote {
+    background-color: transparent;
+    margin: 20px;
+    &:before {
+        color: @color-swatch3;
+    }
+  }
+
+/* ===============================
   MISC
    =============================== */
 
 hr.line {
     background-color: fade(@color-swatch6, 25%);
+    height: 1px;
 }
 
 .youtube, .map {
