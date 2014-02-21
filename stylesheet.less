@@ -9,6 +9,10 @@ Table of Contents -
   5. Menu Navigation
   6. Menu
   7. Footer
+  8. Blog
+  9. Slideshow
+  10. Forms 
+  11. Misc
 
 */
 
@@ -110,7 +114,7 @@ body {
 
 
 /* ===============================
-   4. Header
+   Header & Navigation
    =============================== */
 
 .bk-header {
@@ -374,7 +378,7 @@ body {
 
 
 /* ===============================
-   5. Menu Navigation
+   Menu Navigation
    =============================== */
 
 .widget {
@@ -444,7 +448,7 @@ body {
 }
 
 /* ===============================
-   6. Menu
+   Menu
    =============================== */
 
 div[role="main"] {
@@ -509,14 +513,25 @@ div[role="main"] {
                     }  
                 }
                 .menu-items {  /* Menu items container */ 
-                    padding-left: 0;
+                    width: 100%;  
+                    column-count: 2;
+                    column-gap: 60px;
+                    -moz-column-count: 2;
+                    -moz-column-gap: 60px; 
+                    -webkit-column-count: 2;
+                    -webkit-column-gap: 60px;    
                     @media @mobile {
-                    }
+                        column-count: 1;
+                        -moz-column-count: 1;
+                        -webkit-column-count: 1;
+                    }  
                     li {  /* Menu items */
-                        display: inline-block;
+                        display: block;
                         padding: 1em 0;
+                        position: relative;
                         width: 100%;
                         &.menu-item-promoted { /* Promoted menu item */
+                            display: inline-block;
                             .inner-item { /* Item content container */
                                 h3 {
                                 }
@@ -529,7 +544,11 @@ div[role="main"] {
                             }
                         }  /* end menu-subsection-promoted */
                         .inner-item {  /* Item content container */
+                            display: block;
+                            width: 100%;
                             h3 {  /* Item header */  
+                                display: inline-block;
+                                width: 100%;
                             }
                             .menu-item-image-wrap {
                                 background-size: cover;
@@ -562,6 +581,9 @@ div[role="main"] {
                                 padding-bottom: 0;
                             }
                             .menu-section-item-dietary-props {  /* Nutritional icons */
+                                display: inline-block;
+                                padding: 0;
+                                width: 100%;
                                 .dietary-icon {  /* Default icon */
                                     background-color: fade(@color-swatch3, 85%);
                                     border-radius: 0;
@@ -619,7 +641,7 @@ div[role="main"] {
 
 
 /* ===============================
-   7. Footer
+   Footer
    =============================== */
 
 .bk-footer {
@@ -678,19 +700,7 @@ div[role="main"] {
 }
 
 /* ===============================
-   8. Forms
-   =============================== */
-
-input, textarea {
-    color: black;
-}
-
-fieldset {
-    padding: 1.5em 0;
-}
-
-/* ===============================
-   BLOG
+   Blog
    =============================== */
 
 .widget {
@@ -788,7 +798,7 @@ fieldset {
 }
 
 /* ===============================
-   SLIDESHOW WIDGET
+   Slideshow
    =============================== */
 
 .widget.responsiveslideshow {
@@ -872,32 +882,7 @@ fieldset {
 }
 
 /* ===============================
-   BLOCK QUOTE
-  =============================== */
-
-  blockquote {
-    background-color: transparent;
-    margin: 20px;
-    &:before {
-        color: @color-swatch3;
-    }
-  }
-
-/* ===============================
-  MISC
-   =============================== */
-
-hr.line {
-    background-color: fade(@color-swatch6, 25%);
-    height: 1px;
-}
-
-.youtube, .map {
-    margin: 1.5em 0;
-}
-
-/* ===============================
-   FORMs & BUTTONS
+   Forms & Buttons
    =============================== */
 
 input, textarea {
@@ -916,4 +901,25 @@ fieldset {
 
 .widget.profile form button {
     padding-top: 8px;
+}
+
+/* ===============================
+   Misc
+  =============================== */
+
+blockquote {
+    background-color: transparent;
+    margin: 20px;
+    &:before {
+        color: @color-swatch3;
+    }
+}
+
+hr.line {
+    background-color: fade(@color-swatch6, 25%);
+    height: 1px;
+}
+
+.youtube, .map {
+    margin: 1.5em 0;
 }
