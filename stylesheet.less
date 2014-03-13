@@ -916,3 +916,36 @@ fieldset {
 .widget.profile form button {
     padding-top: 8px;
 }
+
+/* ===============================
+   PRINT STYLES 
+   =============================== */
+.print-mixin {
+    .three, .row .three {
+	    width: 100%;
+	    .widget.image {
+		    display: none;
+	    }
+    }
+    [class*="col"] + [class*="col"]:last-child {
+	    float: none;
+    }
+    .nine, .row .nine {
+	    width: 100%;
+    }
+    .menu-subsection {
+	    border: 1px solid #b9b9b9 !important;
+    }
+	border: none !important;
+}
+ 
+@media print {
+	body {
+		border: none !important;
+	}
+    .print-mixin;
+}
+ 
+.bk-print {
+    .print-mixin;
+}
