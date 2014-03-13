@@ -13,12 +13,7 @@
         {% endif %}
     </header>
     <div role ="main" class="nine cols">
-        <nav>
-            {{widget('menusections', 'menusections1', {})|raw}}
-        </nav>
-        <div class="clearfix">
-            {{widget('menu', 'menu1', {})|raw}}
-        </div>
+        {{zone('main')|raw}}
     </div>
 </div>
 <div class="row">

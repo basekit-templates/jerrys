@@ -9,6 +9,10 @@ Table of Contents -
   5. Menu Navigation
   6. Menu
   7. Footer
+  8. Blog
+  9. Slideshow
+  10. Forms 
+  11. Misc
 
 */
 
@@ -110,7 +114,7 @@ body {
 
 
 /* ===============================
-   4. Header
+   Header & Navigation
    =============================== */
 
 .bk-header {
@@ -201,6 +205,7 @@ body {
                 float: left;
                 display: block;
                 padding: 10px 0;
+                text-align: center;
                 width: 100%;
                 @media @tablet {
                     border-bottom: 1px solid fade(@color-swatch4, 25%);
@@ -373,7 +378,7 @@ body {
 
 
 /* ===============================
-   5. Menu Navigation
+   Menu Navigation
    =============================== */
 
 .widget {
@@ -381,7 +386,7 @@ body {
         background: none;
         border-top: 1px dotted fade(@color-swatch6, 35%);
         border-bottom: 1px dotted fade(@color-swatch6, 35%);
-        padding: 16px 0;
+        padding: 0.5em 0;
         margin: 0;
         @media @tablet {
             border-top: 2px solid fade(@color-swatch4, 20%);
@@ -443,7 +448,7 @@ body {
 }
 
 /* ===============================
-   6. Menu
+   Menu
    =============================== */
 
 div[role="main"] {
@@ -508,14 +513,25 @@ div[role="main"] {
                     }  
                 }
                 .menu-items {  /* Menu items container */ 
-                    padding-left: 0;
+                    width: 100%;  
+                    column-count: 2;
+                    column-gap: 60px;
+                    -moz-column-count: 2;
+                    -moz-column-gap: 60px; 
+                    -webkit-column-count: 2;
+                    -webkit-column-gap: 60px;    
                     @media @mobile {
-                    }
+                        column-count: 1;
+                        -moz-column-count: 1;
+                        -webkit-column-count: 1;
+                    }  
                     li {  /* Menu items */
-                        display: inline-block;
+                        display: block;
                         padding: 1em 0;
+                        position: relative;
                         width: 100%;
                         &.menu-item-promoted { /* Promoted menu item */
+                            display: inline-block;
                             .inner-item { /* Item content container */
                                 h3 {
                                 }
@@ -528,7 +544,11 @@ div[role="main"] {
                             }
                         }  /* end menu-subsection-promoted */
                         .inner-item {  /* Item content container */
+                            display: block;
+                            width: 100%;
                             h3 {  /* Item header */  
+                                display: inline-block;
+                                width: 100%;
                             }
                             .menu-item-image-wrap {
                                 background-size: cover;
@@ -561,6 +581,9 @@ div[role="main"] {
                                 padding-bottom: 0;
                             }
                             .menu-section-item-dietary-props {  /* Nutritional icons */
+                                display: inline-block;
+                                padding: 0;
+                                width: 100%;
                                 .dietary-icon {  /* Default icon */
                                     background-color: fade(@color-swatch3, 85%);
                                     border-radius: 0;
@@ -580,6 +603,7 @@ div[role="main"] {
                                 }
                             }  /* end nutritional icons */
                         }  /* end item content container */
+                    .clearfix;
                     }  /* end menu items */
                 }  /* end menu items container */  
                 .menu-subsection {
@@ -618,7 +642,7 @@ div[role="main"] {
 
 
 /* ===============================
-   7. Footer
+   Footer
    =============================== */
 
 .bk-footer {
@@ -677,19 +701,7 @@ div[role="main"] {
 }
 
 /* ===============================
-   8. Forms
-   =============================== */
-
-input, textarea {
-    color: black;
-}
-
-fieldset {
-    padding: 1.5em 0;
-}
-
-/* ===============================
-   BLOG
+   Blog
    =============================== */
 
 .widget {
@@ -787,7 +799,7 @@ fieldset {
 }
 
 /* ===============================
-   SLIDESHOW WIDGET
+   Slideshow
    =============================== */
 
 .widget.responsiveslideshow {
@@ -871,20 +883,15 @@ fieldset {
 }
 
 /* ===============================
-   BLOCK QUOTE
+   Misc
   =============================== */
-
-  blockquote {
+blockquote {
     background-color: transparent;
     margin: 20px;
     &:before {
         color: @color-swatch3;
     }
-  }
-
-/* ===============================
-  MISC
-   =============================== */
+}
 
 hr.line {
     background-color: fade(@color-swatch6, 25%);
@@ -896,9 +903,8 @@ hr.line {
 }
 
 /* ===============================
-   FORMs & BUTTONS
+   Forms & Buttons
    =============================== */
-
 input, textarea {
     background: white;
     border: 1px solid fade(@color-swatch5, 40%) !important;
@@ -918,7 +924,7 @@ fieldset {
 }
 
 /* ===============================
-   PRINT STYLES 
+   Print Styles
    =============================== */
 .print-mixin {
     .three, .row .three {
